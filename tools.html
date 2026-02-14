@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Tools - FOUNDRY</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    </style>
+</head>
+<body class="bg-[#0a0a0a] text-gray-100">
+    
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-[#0a0a0a]/90 backdrop-blur-sm z-50 border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-2">
+                    <a href="index.html" class="flex items-center space-x-2">
+                        <span class="text-3xl">☀️</span>
+                        <span class="text-xl font-bold gradient-text">FOUNDRY</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-gray-300 hover:text-amber-500 transition">Home</a>
+                    <a href="templates.html" class="text-gray-300 hover:text-amber-500 transition">Templates</a>
+                    <a href="course.html" class="text-gray-300 hover:text-amber-500 transition">Mini-Course</a>
+                    <a href="tools.html" class="text-amber-500 font-semibold">Tools</a>
+                    <a href="about.html" class="text-gray-300 hover:text-amber-500 transition">About</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="pt-32 pb-12 px-4">
+        <div class="max-w-6xl mx-auto text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">
+                Free <span class="gradient-text">Business Calculators</span>
+            </h1>
+            <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+                Stop guessing. Use these calculators to make data-driven decisions for your business.
+            </p>
+        </div>
+    </section>
+
+    <!-- Tools -->
+    <section class="py-12 px-4">
+        <div class="max-w-6xl mx-auto space-y-12">
+            
+            <!-- Pricing Calculator -->
+            <div class="bg-gray-900 rounded-xl border border-gray-800 overflow-hidden">
+                <div class="bg-gradient-to-r from-amber-500/20 to-orange-500/20 p-6 border-b border-gray-800">
+                    <h2 class="text-3xl font-bold flex items-center">
+                        <span class="text-4xl mr-3">💰</span>
+                        Pricing Calculator
+                    </h2>
+                    <p class="text-gray-400 mt-2">Calculate the right price based on your costs, desired profit margin, and market positioning.</p>
+                </div>
+                
+                <div class="p-8">
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <!-- Input Section -->
+                        <div>
+                            <h3 class="text-xl font-bold mb-6">Your Costs</h3>
+                            
+                            <div class="space-y-4">
+                                <div>
+                                    <label class="block text-gray-400 mb-2">Direct Costs (per unit/project)</label>
+                                    <div class="flex items-center">
+                                        <span class="text-gray-400 mr-2">$</span>
+                                        <input type="number" id="directCosts" value="100" class="flex-1 bg-gray-800 border border-gray-700 rounded px-4 py-2 text-white focus:outline-none focus:border-amber-500">
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <label class="block text-gray-400 mb-2">Indirect Costs (per unit/project)</label>
+                                    <div class="flex items-center">
+                                        <span class="text-gray-400 mr-2">$</span>
+                                        <input type="number" id="indirectCosts" value="50" class="flex-1 bg-gray-800 border border-gray-700 rounded px-4 py-2 text-white focus:outline-none focus:border-amber-500">
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <label class="block text-gray-400 mb-2">Desired Profit Margin (%)</label>
+                                    <input type="number" id="profitMargin" value="30" class="w-full bg-gray-800 border border-gray-700 rounded px-4 py-2 text-white focus:outline-none focus:border-amber-500">
+                                </div>
+
+                                <div>
+                                    <label class="block text-gray-400 mb-2">Market Position</label>
+                                    <select id="marketPosition" class="w-full bg-gray-800 border border-gray-700 rounded px-4 py-2 text-white focus:outline-none focus:border-amber-500">
+                                        <option value="0.8">Budget (20% below market)</option>
+                                        <option value="1.0" selected>Competitive (market rate)</option>
+                                        <option value="1.3">Premium (30% above market)</option>
+                                        <option value="1.5">Luxury (50% above market)</option>
+                                    </select>
+                                </div>
+
+                                <button onclick="calculatePrice()" class="w-full bg-amber-500 hover:bg-amber-600 text-black font-bold py-3 rounded-lg transition">
+                                    Calculate Price
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Results Section -->
+                        <div>
+                            <h3 class="text-xl font-bold mb-6">Recommended Pricing</h3>
+                            
+                            <div class="space-y-4">
+                                <div class="bg-gray-800 rounded-lg p-4">
+                                    <p class="text-gray-400 text-sm mb-1">Total Costs</p>
+                                    <p class="text-2xl font-bold" id="totalCosts">$150.00</p>
+                                </div>
+
+                                <div class="bg-gray-800 rounded-lg p-4">
+                                    <p class="text-gray-400 text-sm mb-1">Base Price (Cost + Margin)</p>
+                                    <p class="text-2xl font-bold text-amber-500" id="basePrice">$195.00</p>
+                                </div>
+
+                                <div class="bg-gradient-to-r from-amber-500/20 to-orange-500/20 border border-amber-500 rounded-lg p-6">
+                                    <p class="text-gray-400 text-sm mb-1">Recommended Price</p>
+                                    <p class="text-4xl font-bold text-amber-500" id="recommendedPrice">$195.00</p>
+                                    <p class="text-gray-400 text-sm mt-2" id="positionNote">Competitive market positioning</p>
+                                </div>
+
+                                <div class="bg-gray-800 rounded-lg p-4">
+                                    <p class="text-gray-400 text-sm mb-1">Your Profit Per Sale</p>
+                                    <p class="text-xl font-bold text-green-500" id="profitPerSale">$45.00</p>
+                                </div>
+
+                                <div class="bg-gray-800 rounded-lg p-4">
+                                    <p class="text-gray-400 text-sm mb-1">Actual Profit Margin</p>
+                                    <p class="text-xl font-bold" id="actualMargin">30%</p>
+                                </div>
+                            </div>
+
+                            <div class="mt-6 p-4 bg-blue-500/10 border border-blue-500/30 rounded-lg">
+                                <p class="text-sm text-gray-300">
+                                    💡 <strong>Tip:</strong> If you're new, start at competitive pricing. Once you have social proof, raise to premium.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Break-Even Calculator -->
+            <div class="bg-gray-900 rounded-xl border border-gray-800 overflow-hidden">
+                <div class="bg-gradient-to-r from-blue-500/20 to-purple-500/20 p-6 border-b border-gray-800">
+                    <h2 class="text-3xl font-bold flex items-center">
+                        <span class="text-4xl mr-3">📊</span>
+                        Break-Even Calculator
+                    </h2>
+                    <p class="text-gray-400 mt-2">Calculate how many sales you need to break even and start making profit.</p>
+                </div>
+                
+                <div class="p-8">
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <!-- Input Section -->
+                        <div>
+                            <h3 class="text-xl font-bold mb-6">Your Numbers</h3>
+                            
+                            <div class="space-y-4">
+                                <div>
+                                    <label class="block text-gray-400 mb-2">Fixed Costs (monthly)</label>
+                                    <div class="flex items-center">
+                                        <span class="text-gray-400 mr-2">$</span>
+                                        <input type="number" id="fixedCosts" value="2000" class="flex-1 bg-gray-800 border border-gray-700 rounded px-4 py-2 text-white focus:outline-none focus:border-amber-500">
+                                    </div>
+                                    <p class="text-xs text-gray-500 mt-1">Rent, software, salaries, etc.</p>
+                                </div>
+
+                                <div>
+                                    <label class="block text-gray-400 mb-2">Variable Cost (per unit)</label>
+                                    <div class="flex items-center">
+                                        <span class="text-gray-400 mr-2">$</span>
+                                        <input type="number" id="variableCost" value="30" class="flex-1 bg-gray-800 border border-gray-700 rounded px-4 py-2 text-white focus:outline-none focus:border-amber-500">
+                                    </div>
+                                    <p class="text-xs text-gray-500 mt-1">Materials, delivery, payment fees, etc.</p>
+                                </div>
+
+                                <div>
+                                    <label class="block text-gray-400 mb-2">Price Per Unit</label>
+                                    <div class="flex items-center">
+                                        <span class="text-gray-400 mr-2">$</span>
+                                        <input type="number" id="pricePerUnit" value="100" class="flex-1 bg-gray-800 border border-gray-700 rounded px-4 py-2 text-white focus:outline-none focus:border-amber-500">
+                                    </div>
+                                </div>
+
+                                <button onclick="calculateBreakEven()" class="w-full bg-amber-500 hover:bg-amber-600 text-black font-bold py-3 rounded-lg transition">
+                                    Calculate Break-Even
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Results Section -->
+                        <div>
+                            <h3 class="text-xl font-bold mb-6">Break-Even Analysis</h3>
+                            
+                            <div class="space-y-4">
+                                <div class="bg-gradient-to-r from-amber-500/20 to-orange-500/20 border border-amber-500 rounded-lg p-6">
+                                    <p class="text-gray-400 text-sm mb-1">Break-Even Point</p>
+                                    <p class="text-4xl font-bold text-amber-500" id="breakEvenUnits">29</p>
+                                    <p class="text-gray-400 text-sm mt-1">units per month</p>
+                                </div>
+
+                                <div class="bg-gray-800 rounded-lg p-4">
+                                    <p class="text-gray-400 text-sm mb-1">Revenue at Break-Even</p>
+                                    <p class="text-2xl font-bold" id="breakEvenRevenue">$2,900</p>
+                                </div>
+
+                                <div class="bg-gray-800 rounded-lg p-4">
+                                    <p class="text-gray-400 text-sm mb-1">Contribution Margin (per unit)</p>
+                                    <p class="text-xl font-bold text-green-500" id="contributionMargin">$70</p>
+                                    <p class="text-xs text-gray-400 mt-1">Price minus variable cost</p>
+                                </div>
+
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div class="bg-gray-800 rounded-lg p-4">
+                                        <p class="text-gray-400 text-xs mb-1">At 50 sales</p>
+                                        <p class="text-lg font-bold text-green-500" id="profit50">+$1,500</p>
+                                    </div>
+                                    <div class="bg-gray-800 rounded-lg p-4">
+                                        <p class="text-gray-400 text-xs mb-1">At 100 sales</p>
+                                        <p class="text-lg font-bold text-green-500" id="profit100">+$5,000</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mt-6 p-4 bg-blue-500/10 border border-blue-500/30 rounded-lg">
+                                <p class="text-sm text-gray-300">
+                                    💡 <strong>Tip:</strong> Sell below break-even? You're losing money on every sale. Either raise prices or cut costs.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-20 px-4 bg-gradient-to-r from-amber-500/10 to-orange-500/10">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">
+                Want More Tools?
+            </h2>
+            <p class="text-xl text-gray-400 mb-8">
+                Upgrade to Pro for AI-powered tools, advanced analytics, and custom calculators.
+            </p>
+            <a href="index.html#pricing" class="inline-block bg-amber-500 hover:bg-amber-600 text-black font-bold px-12 py-4 rounded-lg text-lg transition">
+                View Pricing
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 py-12 px-4 border-t border-gray-800">
+        <div class="max-w-6xl mx-auto text-center">
+            <div class="flex items-center justify-center space-x-2 mb-4">
+                <span class="text-2xl">☀️</span>
+                <span class="text-lg font-bold gradient-text">FOUNDRY</span>
+            </div>
+            <p class="text-gray-400 text-sm">© 2026 Divine Success Flow. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Pricing Calculator
+        function calculatePrice() {
+            const directCosts = parseFloat(document.getElementById('directCosts').value) || 0;
+            const indirectCosts = parseFloat(document.getElementById('indirectCosts').value) || 0;
+            const profitMargin = parseFloat(document.getElementById('profitMargin').value) || 0;
+            const marketPosition = parseFloat(document.getElementById('marketPosition').value) || 1;
+
+            const totalCosts = directCosts + indirectCosts;
+            const basePrice = totalCosts / (1 - (profitMargin / 100));
+            const recommendedPrice = basePrice * marketPosition;
+            const profitPerSale = recommendedPrice - totalCosts;
+            const actualMargin = (profitPerSale / recommendedPrice) * 100;
+
+            document.getElementById('totalCosts').textContent = '$' + totalCosts.toFixed(2);
+            document.getElementById('basePrice').textContent = '$' + basePrice.toFixed(2);
+            document.getElementById('recommendedPrice').textContent = '$' + recommendedPrice.toFixed(2);
+            document.getElementById('profitPerSale').textContent = '$' + profitPerSale.toFixed(2);
+            document.getElementById('actualMargin').textContent = actualMargin.toFixed(1) + '%';
+
+            const positionText = {
+                0.8: 'Budget positioning - High volume strategy',
+                1.0: 'Competitive market positioning',
+                1.3: 'Premium positioning - Better clients',
+                1.5: 'Luxury positioning - Exclusive market'
+            };
+            document.getElementById('positionNote').textContent = positionText[marketPosition] || 'Custom positioning';
+        }
+
+        // Break-Even Calculator
+        function calculateBreakEven() {
+            const fixedCosts = parseFloat(document.getElementById('fixedCosts').value) || 0;
+            const variableCost = parseFloat(document.getElementById('variableCost').value) || 0;
+            const pricePerUnit = parseFloat(document.getElementById('pricePerUnit').value) || 0;
+
+            const contributionMargin = pricePerUnit - variableCost;
+            const breakEvenUnits = Math.ceil(fixedCosts / contributionMargin);
+            const breakEvenRevenue = breakEvenUnits * pricePerUnit;
+
+            const profit50 = (50 * contributionMargin) - fixedCosts;
+            const profit100 = (100 * contributionMargin) - fixedCosts;
+
+            document.getElementById('breakEvenUnits').textContent = breakEvenUnits;
+            document.getElementById('breakEvenRevenue').textContent = '$' + breakEvenRevenue.toLocaleString();
+            document.getElementById('contributionMargin').textContent = '$' + contributionMargin.toFixed(2);
+            
+            document.getElementById('profit50').textContent = (profit50 >= 0 ? '+' : '') + '$' + profit50.toLocaleString();
+            document.getElementById('profit50').className = profit50 >= 0 ? 'text-lg font-bold text-green-500' : 'text-lg font-bold text-red-500';
+            
+            document.getElementById('profit100').textContent = (profit100 >= 0 ? '+' : '') + '$' + profit100.toLocaleString();
+            document.getElementById('profit100').className = profit100 >= 0 ? 'text-lg font-bold text-green-500' : 'text-lg font-bold text-red-500';
+        }
+
+        // Calculate on page load
+        window.onload = function() {
+            calculatePrice();
+            calculateBreakEven();
+        };
+
+        // Recalculate on input change
+        document.getElementById('directCosts').addEventListener('input', calculatePrice);
+        document.getElementById('indirectCosts').addEventListener('input', calculatePrice);
+        document.getElementById('profitMargin').addEventListener('input', calculatePrice);
+        document.getElementById('marketPosition').addEventListener('change', calculatePrice);
+
+        document.getElementById('fixedCosts').addEventListener('input', calculateBreakEven);
+        document.getElementById('variableCost').addEventListener('input', calculateBreakEven);
+        document.getElementById('pricePerUnit').addEventListener('input', calculateBreakEven);
+    </script>
+
+</body>
+</html>

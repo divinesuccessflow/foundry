@@ -1,0 +1,72 @@
+FOUNDRY PLATFORM - COMPLETE BUILD MANIFEST
+===========================================
+
+✅ CORE PAGES (6)
+- index.html          Landing page with hero, value props, pricing, email capture
+- templates.html      Gallery of 8 free templates
+- course.html         7-Day Business Builder course page with email gate
+- tools.html          Pricing & Break-Even calculators (interactive)
+- about.html          About page with mission, philosophy, founder story
+- README.md           Complete deployment guide
+
+✅ TEMPLATES (8)
+- business-model-canvas.md           Complete BMC framework with examples
+- one-page-business-plan.md          Full business plan template
+- weekly-revenue-tracker.md          Revenue tracking system
+- content-calendar-30-days.md        30-day content plan
+- customer-avatar-worksheet.md       Detailed avatar creation guide
+- pricing-strategy-calculator.md     3 pricing methods explained
+- launch-checklist.md                Pre/launch/post checklist
+- email-sequence-templates.md        5 proven email sequences
+
+✅ MINI-COURSE (3 DAYS WRITTEN)
+- course/day-1.html   Find Your Profitable Idea
+- course/day-2.html   Define Your Customer Avatar  
+- course/day-3.html   Create Your Irresistible Offer
+- Days 4-7: Locked behind email gate (structure in place)
+
+✅ INTERACTIVE TOOLS (2)
+- Pricing Calculator       Live cost-plus, value-based, competitive pricing
+- Break-Even Calculator    Real-time break-even analysis
+
+✅ FEATURES
+- Email capture (localStorage)
+- Email gate for course unlock
+- Mobile-responsive design
+- Dark theme with gold accents
+- Working calculators with live updates
+- Download functionality for all templates
+- Clean navigation
+- Professional typography (Inter font)
+
+✅ DOCUMENTATION
+- README.md           Complete deployment guide (GitHub Pages, Netlify, Vercel)
+- DEPLOY.md           Step-by-step deployment checklist
+- MANIFEST.txt        This file
+
+TECH STACK
+----------
+- Pure HTML/CSS/JavaScript
+- Tailwind CSS (CDN)
+- No build process required
+- Deployable to GitHub Pages instantly
+- No backend required (yet)
+
+BRAND
+-----
+- Name: FOUNDRY
+- Tagline: "Stop Guessing. Start Building."
+- Symbol: ☀️ (Surya/Sun)
+- Philosophy: "Give away the blueprints. Charge for the building."
+- Parent: Divine Success Flow
+- Founder: Yashaswi
+
+TOTAL FILES: 20
+- 6 HTML pages
+- 8 Template files
+- 3 Course lesson pages
+- 3 Documentation files
+
+STATUS: ✅ COMPLETE AND DEPLOYABLE
+
+Next Step: Deploy to GitHub Pages (see DEPLOY.md)
